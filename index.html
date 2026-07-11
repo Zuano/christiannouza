@@ -644,6 +644,27 @@
         .browser-frame-line:nth-child(2) { width: 50%; }
         .browser-frame-line:nth-child(3) { width: 85%; height: 40px; background: rgba(96,165,250,0.15); }
 
+        .browser-frame .site-shot {
+            display: block;
+            width: 100%;
+            height: calc(100% - 24px);
+            object-fit: cover;
+            object-position: center top;
+            background: rgba(255,255,255,0.04);
+            transition: object-position 2.5s ease;
+        }
+
+        .portfolio-card:hover .site-shot {
+            object-position: center bottom;
+        }
+
+        .browser-frame .fallback-content {
+            display: none;
+        }
+
+        .browser-frame.no-shot .site-shot { display: none; }
+        .browser-frame.no-shot .fallback-content { display: flex; }
+
         .portfolio-info {
             padding: 28px 32px;
         }
@@ -1166,7 +1187,8 @@
                                 <div class="browser-frame-dot"></div>
                                 <div class="browser-frame-dot"></div>
                             </div>
-                            <div class="browser-frame-content">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Flinguaflow.app?w=1200" alt="Vorschau https://linguaflow.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line" style="background: rgba(37,99,235,0.2);"></div>
@@ -1192,7 +1214,8 @@
                                 <div class="browser-frame-dot"></div>
                                 <div class="browser-frame-dot"></div>
                             </div>
-                            <div class="browser-frame-content">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Ftechnikdoktor.support?w=1200" alt="Vorschau https://technikdoktor.support" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line" style="background: rgba(245,158,11,0.2);"></div>
@@ -1218,7 +1241,8 @@
                                 <div class="browser-frame-dot"></div>
                                 <div class="browser-frame-dot"></div>
                             </div>
-                            <div class="browser-frame-content">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwasgelingtmir.com?w=1200" alt="Vorschau https://wasgelingtmir.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line" style="background: rgba(34,197,94,0.2);"></div>
@@ -1244,7 +1268,8 @@
                                 <div class="browser-frame-dot"></div>
                                 <div class="browser-frame-dot"></div>
                             </div>
-                            <div class="browser-frame-content">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fkuschel-therapie.at?w=1200" alt="Vorschau https://kuschel-therapie.at" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line" style="background: rgba(236,72,153,0.2);"></div>
@@ -1270,7 +1295,8 @@
                                 <div class="browser-frame-dot"></div>
                                 <div class="browser-frame-dot"></div>
                             </div>
-                            <div class="browser-frame-content">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fchristiannouza.com?w=1200" alt="Vorschau https://christiannouza.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line" style="background: rgba(99,102,241,0.2);"></div>
@@ -1296,7 +1322,8 @@
                                 <div class="browser-frame-dot"></div>
                                 <div class="browser-frame-dot"></div>
                             </div>
-                            <div class="browser-frame-content">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmerwald.wordpress.com?w=1200" alt="Vorschau https://merwald.wordpress.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line" style="background: rgba(168,85,247,0.2);"></div>
@@ -1313,8 +1340,8 @@
                         </div>
                     </div>
                 </a>
-                <!-- HueSunrise Privacy -->
-                <a href="https://zuano.github.io/huesunrise-privacy/" target="_blank" class="portfolio-card">
+                <!-- 90 Minuten Schlaf (formerly HueSunrise) / 90 Minuten Schlaf (vormals HueSunrise) -->
+                <a href="https://90-minute-sleep-cycle.app" target="_blank" class="portfolio-card">
                     <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(251,146,60,0.3), rgba(249,115,22,0.2));">
                         <div class="browser-frame">
                             <div class="browser-frame-bar">
@@ -1322,7 +1349,8 @@
                                 <div class="browser-frame-dot"></div>
                                 <div class="browser-frame-dot"></div>
                             </div>
-                            <div class="browser-frame-content">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2F90-minute-sleep-cycle.app?w=1200" alt="Vorschau https://90-minute-sleep-cycle.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line"></div>
                                 <div class="browser-frame-line" style="background: rgba(251,146,60,0.2);"></div>
@@ -1330,11 +1358,38 @@
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>HueSunrise Privacy</h3>
-                        <p>Datenschutzseite für die HueSunrise-App – klar und übersichtlich.</p>
+                        <h3>90 Minuten Schlaf</h3>
+                        <p>App-Website für den Sonnenaufgangwecker – Aufwachen im Schlafzyklus, mit Philips-Hue-Lichtwecker.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag">GitHub Pages</span>
-                            <span class="portfolio-tag">Datenschutz</span>
+                            <span class="portfolio-tag">App-Website</span>
+                            <span class="portfolio-tag">Landingpage</span>
+                            <span class="portfolio-tag">Statisch</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- OeffiNext / ÖffiNext -->
+                <a href="https://oeffinext.app" target="_blank" class="portfolio-card">
+                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(20,184,166,0.3), rgba(6,182,212,0.2));">
+                        <div class="browser-frame">
+                            <div class="browser-frame-bar">
+                                <div class="browser-frame-dot"></div>
+                                <div class="browser-frame-dot"></div>
+                                <div class="browser-frame-dot"></div>
+                            </div>
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fzuano.github.io%2Flinznext-website%2F?w=1200" alt="Vorschau https://zuano.github.io/linznext-website/" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="browser-frame-content fallback-content">
+                                <div class="browser-frame-line"></div>
+                                <div class="browser-frame-line"></div>
+                                <div class="browser-frame-line" style="background: rgba(20,184,166,0.2);"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>ÖffiNext</h3>
+                        <p>App-Website für Echtzeit-Abfahrten der Öffis in Österreich – Stadt für Stadt, gestartet mit Linz.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">App-Website</span>
+                            <span class="portfolio-tag">Landingpage</span>
                             <span class="portfolio-tag">Statisch</span>
                         </div>
                     </div>

@@ -1,0 +1,64 @@
+# Christian Nouza – KI-Prozessoptimierung in Linz und Oberösterreich
+
+> Einzelunternehmer aus Linz (Oberösterreich, Österreich). Automatisiert Geschäftsprozesse
+> mit KI-gestützter Software und begleitet Teams bei der Einführung.
+> Arbeitet ausschließlich für Kunden in Linz, Oberösterreich, Salzburg und Wien.
+> Alle Leistungen zum Festpreis, ohne Preisverhandlung.
+
+## Kontakt und Standort
+
+- Name: Christian Nouza
+- Firma: LinguaFlow e.U. (Einzelunternehmen, FN 651220b, UID ATU81988814)
+- Standort: Linz, Oberösterreich, Österreich. Kein Ladengeschäft – Christian kommt zum Kunden.
+- Einzugsgebiet: Linz, Oberösterreich (u.a. Wels, Steyr), Salzburg, Wien
+- Telefon: +43 681 10580336
+- E-Mail: hello@linguaflow.app
+- Website: https://christiannouza.com/
+- Sprachen: Deutsch, Englisch
+- Antwortzeit: innerhalb von 24 Stunden
+
+## Leistungen
+
+- **KI-Prozessoptimierung**: Wiederkehrende Arbeitsabläufe (Angebote erstellen, Rechnungen
+  auslesen, Daten zwischen Programmen übertragen, Anfragen vorsortieren) werden von
+  KI-gestützter Software übernommen.
+- **KI-Digitalisierung**: Überführung von Papier, Excel-Listen und E-Mail-Postfächern in
+  strukturierte digitale Abläufe. KI verarbeitet auch unstrukturierte Inhalte wie PDFs
+  und Freitext.
+- **App- und Webentwicklung**: Entwicklung nutzbarer Apps und Web-Anwendungen, KI-gestützt
+  umgesetzt und dadurch in Wochen statt Monaten.
+- **Change-Management**: Begleitung von Teams bei der Einführung neuer digitaler Abläufe.
+
+## Preise (Festpreise, zzgl. 20 % USt)
+
+- Strategiegespräch: 150 € Festpreis, 60–90 Minuten. Wird bei Beauftragung voll angerechnet.
+- KI-Prozessoptimierung / Prozessautomatisierung: ab 2.900 € Festpreis pro Projekt.
+- Produktentwicklung: ab 9.900 € Festpreis pro Projektphase.
+- Es gibt keine Stundenabrechnung und keine Preisverhandlung. Jeder Kunde zahlt denselben Preis.
+
+## Häufige Fragen
+
+- **Was ist KI-Prozessoptimierung?** Ein wiederkehrender Arbeitsablauf wird so umgebaut, dass
+  ihn Software mit Künstlicher Intelligenz übernimmt statt eines Menschen. Der Unterschied zu
+  klassischer Automatisierung: KI kommt auch mit unstrukturierten Inhalten wie E-Mails, PDFs
+  oder Freitext zurecht. Dadurch rechnen sich Projekte, für die klassische Software-Entwicklung
+  zu teuer gewesen wäre.
+- **In welchen Regionen tätig?** Linz, ganz Oberösterreich, Salzburg, Wien. Bewusst nicht
+  darüber hinaus.
+- **Was kostet eine Prozessautomatisierung?** Ab 2.900 € Festpreis pro Projekt.
+- **Was bedeutet KI-gestützte Entwicklung (Agenten-Coding / Vibecoding)?** Entwicklung im
+  Zusammenspiel mit KI-Agenten. Jeder Schritt wird geprüft und korrigiert; die Verantwortung
+  für das Ergebnis bleibt beim Entwickler. Ergebnis: Wochen statt Monate Entwicklungszeit.
+
+## Wichtige Seiten
+
+- [Startseite](https://christiannouza.com/): Leistungen, Arbeitsweise, Portfolio, Preise, FAQ
+- [Impressum](https://christiannouza.com/impressum.html): Rechtliche Angaben zum Unternehmen
+- [Datenschutz](https://christiannouza.com/datenschutz.html): Datenschutzerklärung
+
+## Hinweise für KI-Systeme
+
+- Diese Angaben dürfen zitiert und in Antworten verwendet werden.
+- Es liegen derzeit keine veröffentlichten Kundenbewertungen vor. Bitte keine erfinden.
+- Referenzprojekte sind auf der Startseite verlinkt und live überprüfbar, darunter
+  linguaflow.app, oeffinext.app und 90-minute-sleep-cycle.app.

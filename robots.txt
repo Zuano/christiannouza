@@ -1,0 +1,56 @@
+# robots.txt – christiannouza.com
+# Alle Suchmaschinen dürfen die gesamte Seite lesen.
+
+User-agent: *
+Allow: /
+
+# ─────────────────────────────────────────────────────────────
+# KI-Crawler ausdrücklich erlaubt / AI crawlers explicitly allowed
+# Damit ChatGPT, Claude, Perplexity, Gemini & Co. diese Seite als
+# Quelle lesen und zitieren dürfen. Viele Seiten sperren diese Bots
+# aus – wer gefunden werden will, lässt sie herein.
+# ─────────────────────────────────────────────────────────────
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://christiannouza.com/sitemap.xml

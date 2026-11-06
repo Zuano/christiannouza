@@ -1128,8 +1128,25 @@
         }
 
         /* ─── Responsive ─── */
+        /* Four service cards only fit from about 1180px: below that the long
+           heading "KI-Prozessoptimierung" is cut off by the card.
+           Vier Leistungs-Karten passen erst ab ca. 1180 px: Darunter schneidet
+           die Karte die lange Überschrift „KI-Prozessoptimierung" ab. */
+        @media (max-width: 1180px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 968px) {
             :root { --section-padding: 80px; }
+
+            /* Keeps section headings clear of the fixed navigation after a menu jump.
+               Hält Abschnitts-Überschriften nach einem Menü-Sprung unter der fixen Navigation frei. */
+            section { scroll-margin-top: 32px; }
+
+            .hero {
+                padding-top: 104px;
+                padding-bottom: 60px;
+            }
 
             .hero-inner {
                 grid-template-columns: 1fr;
@@ -1140,7 +1157,6 @@
             .hero p { margin: 0 auto 40px; }
             .hero-buttons { justify-content: center; }
 
-            .hero-visual { order: -1; }
             .hero-float { display: none; }
 
             .about-grid {
@@ -1175,39 +1191,106 @@
             .footer-bottom { flex-direction: column; text-align: center; margin-top: 32px; }
         }
 
-        @media (max-width: 640px) {
-            :root { --section-padding: 60px; }
-            section { padding-left: 20px; padding-right: 20px; }
-            .nav-inner { padding: 0 20px; }
-            .hero { padding: 0 20px; }
-            footer { padding: 40px 20px; }
-
+        /* Logo and all menu links need about 790px, so the burger menu starts earlier.
+           Logo und alle Menüpunkte brauchen ca. 790 px, deshalb startet das Burger-Menü früher. */
+        @media (max-width: 860px) {
             .nav-links { display: none; }
-            .mobile-toggle { display: block; }
+            .mobile-toggle { display: block; padding: 10px; }
 
             .nav-links.open {
                 display: flex;
                 flex-direction: column;
+                gap: 0;
                 position: absolute;
                 top: 72px;
                 left: 0;
                 right: 0;
                 background: var(--color-bg);
-                padding: 20px 40px;
+                padding: 12px 40px 24px;
                 border-bottom: 1px solid var(--color-border);
                 box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             }
 
+            /* Large enough to tap with a finger.
+               Groß genug, um sie mit dem Finger zu treffen. */
+            .nav-links.open a {
+                display: block;
+                padding: 12px 0;
+                font-size: 1rem;
+            }
+
+            .nav-links.open a::after { display: none; }
+
+            .nav-links.open .nav-cta {
+                margin-top: 12px;
+                padding: 12px 24px;
+                text-align: center;
+            }
+        }
+
+        /* Touch screens keep the hover look after a tap, which left a stray blue bar on a card.
+           Touchscreens behalten den Hover-Effekt nach dem Antippen, das ließ einen blauen Balken stehen. */
+        @media (hover: none) {
+            .service-card:hover {
+                box-shadow: none;
+                border-color: var(--color-border);
+            }
+
+            .service-card:hover::before { transform: scaleX(0); }
+        }
+
+        @media (max-width: 640px) {
+            :root { --section-padding: 60px; }
+            section { padding-left: 20px; padding-right: 20px; }
+            .nav-inner { padding: 0 20px; }
+            footer { padding: 40px 20px; }
+
+            .nav-links.open { padding-left: 20px; padding-right: 20px; }
+
+            /* The top padding keeps the content clear of the fixed navigation; the empty
+               browser graphic is dropped so the message comes first.
+               Der Abstand oben hält den Inhalt unter der fixen Navigation frei; die leere
+               Browser-Grafik entfällt, damit die Botschaft zuerst kommt. */
+            .hero {
+                padding: 104px 20px 56px;
+                min-height: auto;
+            }
+
+            .hero-visual { display: none; }
+
+            /* Small enough for "was bisher zu teuer" to stay on one line.
+               Klein genug, damit „was bisher zu teuer" in einer Zeile bleibt. */
+            .hero h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+
             .hero-buttons {
                 flex-direction: column;
+                align-items: stretch;
             }
+
+            .hero-buttons a { justify-content: center; }
+
+            .about-grid { text-align: left; }
 
             .about-stats {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 16px;
             }
 
+            .services-grid { grid-template-columns: 1fr; }
+
+            .service-card,
+            .pricing-card { padding: 32px 24px; }
+
+            .portfolio-info { padding: 24px 20px; }
+
+            .faq-item .faq-answer { padding-right: 0; }
+
             .form-row { grid-template-columns: 1fr; }
+
+            /* Below 16px, iPhones zoom into the page as soon as a field is tapped.
+               Unter 16 px zoomt das iPhone in die Seite, sobald ein Feld angetippt wird. */
+            .form-group input,
+            .form-group textarea { font-size: 16px; }
         }
     </style>
 

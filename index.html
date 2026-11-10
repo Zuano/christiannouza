@@ -23,7 +23,7 @@
     <meta property="og:title" content="KI-Prozessoptimierung in Linz &amp; OÖ | Christian Nouza">
     <meta property="og:description" content="Prozesse automatisieren, die bisher zu teuer waren. Für Unternehmen in Linz, Oberösterreich, Salzburg und Wien. Festpreis ab 2.900 €.">
     <meta property="og:image" content="https://christiannouza.com/og-image.png">
-    <meta property="og:image:alt" content="Christian Nouza – KI-Prozessoptimierung in Linz und Oberösterreich">
+    <meta property="og:image:alt" content="Christian Nouza, KI-Prozessoptimierung in Linz und Oberösterreich">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="KI-Prozessoptimierung in Linz &amp; OÖ | Christian Nouza">
     <meta name="twitter:description" content="Prozesse automatisieren, die bisher zu teuer waren. Für Unternehmen in Linz, Oberösterreich, Salzburg und Wien.">
@@ -65,6 +65,18 @@
             color: var(--color-text);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* Visible keyboard focus on every link, button and field.
+           Sichtbarer Tastatur-Fokus auf jedem Link, Button und Feld. */
+        :focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 3px;
+        }
+
+        .portfolio :focus-visible,
+        footer :focus-visible {
+            outline-color: #93C5FD;
         }
 
         /* ─── Navigation ─── */
@@ -201,33 +213,6 @@
             z-index: 2;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--color-accent-light);
-            color: var(--color-accent);
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 32px;
-            letter-spacing: 0.03em;
-        }
-
-        .hero-badge .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--color-accent);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
         .hero h1 {
             font-family: var(--font-serif);
             font-size: clamp(2.8rem, 5vw, 4.2rem);
@@ -347,10 +332,8 @@
         }
 
         .flow-label {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
             color: var(--color-text-secondary);
             margin-bottom: 14px;
         }
@@ -386,54 +369,9 @@
             color: var(--color-text-secondary);
         }
 
-        .flow-col.after .flow-foot { color: #059669; }
-
-        .hero-float {
-            position: absolute;
-            background: white;
-            padding: 14px 18px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Sits above the card header so it does not cover the title
-           Sitzt über der Kopfzeile, damit er den Titel nicht verdeckt */
-        .hero-float.top-right {
-            top: -52px;
-            right: -20px;
-            animation-delay: 0.5s;
-        }
-
-        /* Hangs below the card so it does not cover the workflow steps
-           Hängt unter der Karte, damit er die Ablauf-Schritte nicht verdeckt */
-        .hero-float.bottom-left {
-            bottom: -44px;
-            left: -30px;
-        }
-
-        .hero-float .icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .hero-float .icon.green { background: #ECFDF5; }
-        .hero-float .icon.blue { background: var(--color-accent-light); }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+        /* Darker green so the small text stays readable on the light blue (WCAG AA).
+           Dunkleres Grün, damit der kleine Text auf Hellblau lesbar bleibt (WCAG AA). */
+        .flow-col.after .flow-foot { color: #047857; }
 
         /* ─── Section Base ─── */
         section {
@@ -445,14 +383,14 @@
             margin: 0 auto;
         }
 
+        /* Normal case on purpose: wide-tracked capitals read as template.
+           Bewusst in normaler Schreibweise: gesperrte Großbuchstaben wirken wie eine Vorlage. */
         .section-label {
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
             color: var(--color-accent);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .section-title {
@@ -546,53 +484,14 @@
             margin-top: 60px;
         }
 
+        /* Plain cards without emoji or hover lift: they are not clickable.
+           Schlichte Karten ohne Emoji und ohne Anheben: Sie sind nicht anklickbar. */
         .service-card {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: 20px;
             padding: 40px 32px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
         }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--color-accent);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-            border-color: transparent;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-        }
-
-        .service-icon.blue { background: var(--color-accent-light); }
-        .service-icon.green { background: #ECFDF5; }
-        .service-icon.purple { background: #F5F3FF; }
-        .service-icon.amber { background: #FFFBEB; }
 
         .service-card h3 {
             font-size: 1.2rem;
@@ -611,18 +510,23 @@
             background: var(--color-surface);
         }
 
+        /* The steps are a sequence, so they read as rows top to bottom instead of
+           a third card grid in a row.
+           Die Schritte sind eine Abfolge, darum stehen sie als Zeilen untereinander
+           statt als dritte Karten-Reihe hintereinander. */
         .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 60px;
+            margin-top: 56px;
+            max-width: 920px;
+            border-top: 1px solid var(--color-border);
         }
 
         .process-step {
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 20px;
-            padding: 32px;
+            display: grid;
+            grid-template-columns: 64px 200px 1fr;
+            gap: 24px;
+            align-items: baseline;
+            padding: 32px 0;
+            border-bottom: 1px solid var(--color-border);
         }
 
         .process-number {
@@ -630,18 +534,16 @@
             font-size: 2rem;
             line-height: 1;
             color: var(--color-accent);
-            margin-bottom: 20px;
         }
 
         .process-step h3 {
             font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 12px;
         }
 
         .process-step p {
             color: var(--color-text-secondary);
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.7;
         }
 
@@ -726,21 +628,37 @@
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 20px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: border-color 0.3s ease, background 0.3s ease;
             text-decoration: none;
             color: white;
             display: block;
         }
 
         .portfolio-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.25);
             background: rgba(255,255,255,0.08);
         }
 
+        /* LinguaFlow is Christian's own product and the largest project, so it gets
+           the full row with the screenshot beside the text.
+           LinguaFlow ist das eigene Produkt und das größte Projekt, darum bekommt es
+           die ganze Zeile mit dem Bild neben dem Text. */
+        .portfolio-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            align-items: center;
+        }
+
+        .portfolio-card.featured .portfolio-info {
+            padding: 32px 40px;
+        }
+
+        /* One neutral backdrop for every card: the real screenshot carries the colour.
+           Ein neutraler Hintergrund für alle Karten: Farbe bringt der echte Screenshot. */
         .portfolio-preview {
             aspect-ratio: 16/10;
-            background: linear-gradient(135deg, rgba(37,99,235,0.3), rgba(99,102,241,0.2));
+            background: rgba(255,255,255,0.03);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -751,65 +669,72 @@
         .portfolio-preview .browser-frame {
             width: 85%;
             height: 80%;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.06);
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.12);
             overflow: hidden;
         }
 
-        .browser-frame-bar {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 12px;
-            background: rgba(255,255,255,0.06);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .browser-frame-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-        }
-
-        .browser-frame-content {
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .browser-frame-line {
-            height: 8px;
-            border-radius: 4px;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .browser-frame-line:nth-child(1) { width: 70%; }
-        .browser-frame-line:nth-child(2) { width: 50%; }
-        .browser-frame-line:nth-child(3) { width: 85%; height: 40px; background: rgba(96,165,250,0.15); }
-
         .browser-frame .site-shot {
             display: block;
             width: 100%;
-            height: calc(100% - 24px);
+            height: 100%;
             object-fit: cover;
             object-position: center top;
-            background: rgba(255,255,255,0.04);
             transition: object-position 2.5s ease;
         }
 
+        /* Hover scrolls the screenshot so the whole page can be seen.
+           Beim Darüberfahren scrollt das Bild, damit man die ganze Seite sieht. */
         .portfolio-card:hover .site-shot {
             object-position: center bottom;
         }
 
+        /* If the screenshot service fails, the domain is shown instead of grey bars.
+           Fällt der Screenshot-Dienst aus, steht die Adresse statt grauer Balken da. */
         .browser-frame .fallback-content {
             display: none;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
         }
 
         .browser-frame.no-shot .site-shot { display: none; }
         .browser-frame.no-shot .fallback-content { display: flex; }
+
+        /* Invitation as a full-width strip at the end instead of an extra card.
+           Einladung als Streifen über die ganze Breite statt einer weiteren Karte. */
+        .portfolio-cta {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 32px 40px;
+            border: 1px dashed rgba(255,255,255,0.25);
+            border-radius: 20px;
+        }
+
+        .portfolio-cta h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .portfolio-cta p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+        }
+
+        .portfolio-cta .btn-primary {
+            background: white;
+            color: var(--color-dark);
+            flex-shrink: 0;
+        }
 
         .portfolio-info {
             padding: 28px 32px;
@@ -842,28 +767,6 @@
             color: rgba(255,255,255,0.6);
         }
 
-        /* ─── Testimonial / CTA ─── */
-        .cta-section {
-            text-align: center;
-            background: var(--color-surface);
-        }
-
-        .cta-section .section-title {
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-
-        .cta-section .section-description {
-            max-width: 500px;
-            margin: 0 auto 40px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-        }
-
         /* ─── Pricing (Preise) ─── */
         .pricing {
             background: var(--color-bg);
@@ -884,12 +787,6 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
         }
 
         .pricing-card.featured {
@@ -992,21 +889,12 @@
         }
 
         .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-border);
         }
 
-        .contact-item .icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            background: var(--color-accent-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
+        .contact-item:last-child {
+            border-bottom: none;
         }
 
         .contact-item-text {
@@ -1064,7 +952,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--color-accent);
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.25);
         }
 
         .form-group textarea {
@@ -1183,8 +1071,6 @@
             .hero p { margin: 0 auto 40px; }
             .hero-buttons { justify-content: center; }
 
-            .hero-float { display: none; }
-
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1195,9 +1081,18 @@
 
             .services-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; margin-left: auto; margin-right: auto; }
 
-            .process-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+            /* Number beside the step, heading and text stacked.
+               Nummer neben dem Schritt, Überschrift und Text untereinander. */
+            .process-step {
+                grid-template-columns: 48px 1fr;
+                row-gap: 8px;
+            }
+
+            .process-step p { grid-column: 2; }
 
             .portfolio-grid { grid-template-columns: 1fr; }
+
+            .portfolio-card.featured { display: block; }
 
             .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
 
@@ -1254,17 +1149,6 @@
             }
         }
 
-        /* Touch screens keep the hover look after a tap, which left a stray blue bar on a card.
-           Touchscreens behalten den Hover-Effekt nach dem Antippen, das ließ einen blauen Balken stehen. */
-        @media (hover: none) {
-            .service-card:hover {
-                box-shadow: none;
-                border-color: var(--color-border);
-            }
-
-            .service-card:hover::before { transform: scaleX(0); }
-        }
-
         @media (max-width: 640px) {
             :root { --section-padding: 60px; }
             section { padding-left: 20px; padding-right: 20px; }
@@ -1307,7 +1191,19 @@
             .service-card,
             .pricing-card { padding: 32px 24px; }
 
-            .portfolio-info { padding: 24px 20px; }
+            .portfolio-info,
+            .portfolio-card.featured .portfolio-info { padding: 24px 20px; }
+
+            .portfolio-cta {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px 20px;
+            }
+
+            .portfolio-cta .btn-primary {
+                width: 100%;
+                justify-content: center;
+            }
 
             .faq-item .faq-answer { padding-right: 0; }
 
@@ -1317,6 +1213,17 @@
                Unter 16 px zoomt das iPhone in die Seite, sobald ein Feld angetippt wird. */
             .form-group input,
             .form-group textarea { font-size: 16px; }
+        }
+
+        /* People who switch off motion in their system get no scrolling or sliding.
+           Wer Bewegung im System abschaltet, bekommt kein Scrollen und kein Gleiten. */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
+            }
         }
     </style>
 
@@ -1436,7 +1343,7 @@
               "name": "Was ist KI-Prozessoptimierung?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "KI-Prozessoptimierung bedeutet, einen wiederkehrenden Arbeitsablauf im Unternehmen so umzubauen, dass ihn Software mit Künstlicher Intelligenz übernimmt – statt eines Menschen. Typische Beispiele: Angebote erstellen, Rechnungen auslesen, Daten zwischen Programmen übertragen, Anfragen vorsortieren. Der Unterschied zu klassischer Automatisierung: KI kann auch mit unstrukturierten Inhalten wie E-Mails, PDFs oder Freitext umgehen. Dadurch rechnen sich Projekte, für die eine klassische Software-Entwicklung zu teuer gewesen wäre."
+                "text": "KI-Prozessoptimierung bedeutet, einen wiederkehrenden Arbeitsablauf im Unternehmen so umzubauen, dass ihn Software mit Künstlicher Intelligenz übernimmt statt eines Menschen. Typische Beispiele: Angebote erstellen, Rechnungen auslesen, Daten zwischen Programmen übertragen, Anfragen vorsortieren. Der Unterschied zu klassischer Automatisierung: KI kann auch mit unstrukturierten Inhalten wie E-Mails, PDFs oder Freitext umgehen. Dadurch rechnen sich Projekte, für die eine klassische Software-Entwicklung zu teuer gewesen wäre."
               }
             },
             {
@@ -1452,7 +1359,7 @@
               "name": "Was kostet eine Prozessautomatisierung?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Eine Prozessautomatisierung kostet bei mir ab 2.900 € als Festpreis pro Projekt. Eine Produktentwicklung startet bei 9.900 € pro Projektphase. Der Einstieg ist das Strategiegespräch um 150 € Festpreis, das bei einer Beauftragung voll angerechnet wird. Alle Preise sind Endpreise, es kommt nichts dazu: Als Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG stelle ich meine Rechnungen ohne Umsatzsteuer aus, ein Vorsteuerabzug ist daher nicht möglich. Den fixen Preis kennen Sie vor Projektstart – es gibt keine offene Stundenabrechnung."
+                "text": "Eine Prozessautomatisierung kostet bei mir ab 2.900 € als Festpreis pro Projekt. Eine Produktentwicklung startet bei 9.900 € pro Projektphase. Der Einstieg ist das Strategiegespräch um 150 € Festpreis, das bei einer Beauftragung voll angerechnet wird. Alle Preise sind Endpreise, es kommt nichts dazu: Als Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG stelle ich meine Rechnungen ohne Umsatzsteuer aus, ein Vorsteuerabzug ist daher nicht möglich. Den fixen Preis kennen Sie vor Projektstart. Eine offene Stundenabrechnung gibt es nicht."
               }
             },
             {
@@ -1468,7 +1375,7 @@
               "name": "Was passiert im Strategiegespräch?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "In 60 bis 90 Minuten sehen wir uns Ihren Arbeitsablauf, Ihre Produktidee oder Ihr IT-Problem an. Sie gehen mit konkreten, sofort umsetzbaren Empfehlungen heraus – ausdrücklich auch dann, wenn Sie diese ohne mich umsetzen. Das Gespräch kostet 150 € Festpreis und wird bei einer Beauftragung voll angerechnet."
+                "text": "In 60 bis 90 Minuten sehen wir uns Ihren Arbeitsablauf, Ihre Produktidee oder Ihr IT-Problem an. Sie gehen mit konkreten, sofort umsetzbaren Empfehlungen heraus, ausdrücklich auch dann, wenn Sie diese ohne mich umsetzen. Das Gespräch kostet 150 € Festpreis und wird bei einer Beauftragung voll angerechnet."
               }
             },
             {
@@ -1476,7 +1383,7 @@
               "name": "Was bedeutet KI-gestützte Entwicklung?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ich entwickle im Zusammenspiel mit KI-Agenten – im Fachjargon heißt das Agenten-Coding oder Vibecoding. Ich beschreibe der KI, was entstehen soll, prüfe jeden Schritt und korrigiere ihn. Die Verantwortung für das Ergebnis bleibt bei mir. Der Effekt: Ein Projekt entsteht in Wochen statt in Monaten. Genau deshalb rechnen sich Automatisierungen, die vor zwei Jahren noch außerhalb der finanziellen Reichweite lagen."
+                "text": "Ich entwickle im Zusammenspiel mit KI-Agenten, im Fachjargon heißt das Agenten-Coding oder Vibecoding. Ich beschreibe der KI, was entstehen soll, prüfe jeden Schritt und korrigiere ihn. Die Verantwortung für das Ergebnis bleibt bei mir. Der Effekt: Ein Projekt entsteht in Wochen statt in Monaten. Genau deshalb rechnen sich Automatisierungen, die vor zwei Jahren noch außerhalb der finanziellen Reichweite lagen."
               }
             },
             {
@@ -1511,7 +1418,7 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact" class="nav-cta">Kontakt</a></li>
             </ul>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1523,18 +1430,11 @@
     <section class="hero" id="hero">
         <div class="hero-inner">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    Linz &amp; Oberösterreich · Verfügbar für neue Projekte
-                </div>
                 <h1>Automatisieren,<br>was bisher <span>zu teuer</span><br>war.</h1>
-                <p>Ich bin Christian Nouza. Ich optimiere Geschäftsprozesse mit KI – auch dort, wo sich Software früher nie gerechnet hat. Für Unternehmen in Linz, Oberösterreich, Salzburg und Wien. Zum Festpreis.</p>
+                <p>Ich bin Christian Nouza. Ich optimiere Geschäftsprozesse mit KI, auch dort, wo sich Software früher nie gerechnet hat. Für Unternehmen in Linz, Oberösterreich, Salzburg und Wien. Zum Festpreis.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        Projekt besprechen
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                    <a href="#portfolio" class="btn-secondary">Portfolio ansehen</a>
+                    <a href="#contact" class="btn-primary">Projekt besprechen</a>
+                    <a href="#portfolio" class="btn-secondary">Projekte ansehen</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -1564,14 +1464,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-float top-right">
-                    <div class="icon green">✓</div>
-                    KI-gestützte Entwicklung
-                </div>
-                <div class="hero-float bottom-left">
-                    <div class="icon blue">⚡</div>
-                    Festpreis statt Stundenzettel
-                </div>
             </div>
         </div>
     </section>
@@ -1587,12 +1479,12 @@
                 </div>
                 <div class="about-text">
                     <h3>Hallo, ich bin Christian.</h3>
-                    <p>Ich arbeite von Linz aus und helfe Unternehmen dabei, wiederkehrende Abläufe mit KI zu automatisieren – und die Menschen mitzunehmen, die danach damit arbeiten. Unterwegs bin ich in Linz, ganz Oberösterreich, Salzburg und Wien.</p>
-                    <p>Bewusst nicht weiter: Wer mich beauftragt, soll mich auch erreichen können. Und bewusst kein Allrounder mehr – ich mache das, was ich wirklich gut kann, statt alles ein bisschen.</p>
+                    <p>Ich arbeite von Linz aus und helfe Unternehmen dabei, wiederkehrende Abläufe mit KI zu automatisieren und die Menschen mitzunehmen, die danach damit arbeiten. Unterwegs bin ich in Linz, ganz Oberösterreich, Salzburg und Wien.</p>
+                    <p>Bewusst nicht weiter: Wer mich beauftragt, soll mich auch erreichen können. Und bewusst kein Allrounder mehr. Ich mache das, was ich wirklich gut kann, statt alles ein bisschen.</p>
                     <p>Jedes Projekt beginnt mit einem Gespräch: Was kostet Sie dieser Ablauf heute wirklich? Erst danach reden wir über Lösungen.</p>
                     <div class="about-stats">
                         <div>
-                            <div class="stat-number">8+</div>
+                            <div class="stat-number">9</div>
                             <div class="stat-label">Live-Projekte, alle unten verlinkt</div>
                         </div>
                         <div>
@@ -1614,27 +1506,23 @@
         <div class="section-inner">
             <span class="section-label">Leistungen</span>
             <h2 class="section-title">KI-Prozessoptimierung für Unternehmen<br>in Linz und Oberösterreich</h2>
-            <p class="section-description">Vier Leistungen, ein Ansprechpartner – vom ersten Prozess-Check bis zu dem Tag, an dem Ihr Team den neuen Ablauf wirklich nutzt.</p>
+            <p class="section-description">Vier Leistungen, ein Ansprechpartner. Ich bin vom ersten Prozess-Check an dabei, bis Ihr Team den neuen Ablauf wirklich nutzt.</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon blue">🔄</div>
                     <h3>KI-Prozessoptimierung</h3>
                     <p>Ein Ablauf, der Ihr Team jede Woche Stunden kostet, läuft danach von selbst: Angebote erstellen, Rechnungen auslesen, Daten zwischen Programmen übertragen. Überall dort, wo heute jemand kopiert und einfügt.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon purple">📄</div>
                     <h3>KI-Digitalisierung</h3>
-                    <p>Papier, Excel-Listen und das E-Mail-Postfach als Datenbank. KI kommt heute auch mit unstrukturierten Inhalten zurecht – deshalb rechnen sich Digitalisierungen, die vor zwei Jahren noch an den Kosten gescheitert sind.</p>
+                    <p>Papier, Excel-Listen und das E-Mail-Postfach als Datenbank. KI kommt heute auch mit unstrukturierten Inhalten zurecht. Deshalb rechnen sich Digitalisierungen, die vor zwei Jahren noch an den Kosten gescheitert sind.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon green">📱</div>
                     <h3>App- &amp; Webentwicklung</h3>
-                    <p>Von der Idee zur nutzbaren App oder Web-Anwendung. KI-gestützt entwickelt und dadurch in Wochen statt Monaten fertig – zum Festpreis, den Sie vor dem Start kennen.</p>
+                    <p>Von der Idee zur nutzbaren App oder Web-Anwendung. KI-gestützt entwickelt und dadurch in Wochen statt Monaten fertig, zum Festpreis, den Sie vor dem Start kennen.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon amber">🤝</div>
                     <h3>Change-Management</h3>
-                    <p>Die beste Automatisierung ist wertlos, wenn das Team sie umgeht. Ich begleite die Einführung so lange, bis der neue Ablauf im Alltag angekommen ist – nicht nur in der Präsentation.</p>
+                    <p>Die beste Automatisierung ist wertlos, wenn das Team sie umgeht. Ich begleite die Einführung so lange, bis der neue Ablauf im Alltag angekommen ist, nicht nur in der Präsentation.</p>
                 </div>
             </div>
         </div>
@@ -1645,258 +1533,205 @@
         <div class="section-inner">
             <span class="section-label">Wie ich arbeite</span>
             <h2 class="section-title">Warum sich Projekte rechnen,<br>die früher zu teuer waren</h2>
-            <p class="section-description">Kein Geheimnis, keine Zauberei – ein verändertes Werkzeug. Hier steht, was sich konkret geändert hat und was das für Ihr Budget bedeutet.</p>
+            <p class="section-description">Der Unterschied ist das Werkzeug. Hier steht, was sich konkret geändert hat und was das für Ihr Budget bedeutet.</p>
             <div class="process-grid">
                 <div class="process-step">
                     <div class="process-number">01</div>
                     <h3>Verstehen</h3>
-                    <p>Wir sehen uns den Ablauf an, der Sie Zeit kostet – und rechnen nach, was er Sie im Jahr wirklich kostet. Manchmal ist das Ergebnis: Automatisierung zahlt sich hier nicht aus. Dann sage ich Ihnen das.</p>
+                    <p>Wir sehen uns den Ablauf an, der Sie Zeit kostet, und rechnen nach, was er Sie im Jahr wirklich kostet. Manchmal ist das Ergebnis: Automatisierung zahlt sich hier nicht aus. Dann sage ich Ihnen das.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-number">02</div>
                     <h3>Bauen</h3>
-                    <p>Ich entwickle im Zusammenspiel mit KI-Agenten – im Fachjargon Agenten-Coding oder Vibecoding. Ich beschreibe der KI, was entstehen soll, prüfe jeden Schritt und korrigiere ihn. Die Verantwortung für das Ergebnis bleibt bei mir. Der Effekt: Wochen statt Monate – und genau deshalb rechnen sich Projekte, die vor zwei Jahren an den Kosten gescheitert wären.</p>
+                    <p>Ich entwickle im Zusammenspiel mit KI-Agenten, im Fachjargon Agenten-Coding oder Vibecoding. Ich beschreibe der KI, was entstehen soll, prüfe jeden Schritt und korrigiere ihn. Die Verantwortung für das Ergebnis bleibt bei mir. Der Effekt: Wochen statt Monate. Genau deshalb rechnen sich Projekte, die vor zwei Jahren an den Kosten gescheitert wären.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-number">03</div>
                     <h3>Einführen</h3>
-                    <p>Software, die niemand benutzt, ist verbranntes Geld. Ich begleite Ihr Team so lange, bis der neue Ablauf im Alltag angekommen ist – und nehme die Sorge ernst, dass KI Arbeitsplätze wegnimmt.</p>
+                    <p>Software, die niemand benutzt, ist verbranntes Geld. Ich begleite Ihr Team so lange, bis der neue Ablauf im Alltag angekommen ist. Die Sorge, dass KI Arbeitsplätze wegnimmt, nehme ich dabei ernst.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio -->
+    <!--
+        Each card shows a live screenshot of the real site (wp.com mshots). If that service
+        fails, the domain is shown instead. Keep the count in the description and in the
+        "about" stats in sync with the number of cards.
+        Jede Karte zeigt einen Live-Screenshot der echten Seite (wp.com mshots). Fällt der
+        Dienst aus, steht die Adresse da. Anzahl in der Beschreibung und bei den Zahlen
+        unter „Über mich" mit der Kartenzahl abgleichen.
+    -->
     <section class="portfolio" id="portfolio">
         <div class="section-inner">
             <span class="section-label">Portfolio</span>
             <h2 class="section-title" style="color: white;">Ausgewählte Projekte</h2>
-            <p class="section-description">Acht Projekte, die live sind. Jedes davon anklickbar und überprüfbar – ich zeige lieber, was läuft, als zu behaupten, was ich könnte.</p>
+            <p class="section-description">Neun Projekte, die live sind. Jedes lässt sich anklicken und prüfen. Ich zeige lieber, was läuft, als zu behaupten, was ich könnte.</p>
             <div class="portfolio-grid">
                 <!-- LinguaFlow -->
-                <a href="https://linguaflow.app" target="_blank" class="portfolio-card featured">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(37,99,235,0.35), rgba(59,130,246,0.2));">
+                <a href="https://linguaflow.app" target="_blank" rel="noopener" class="portfolio-card featured">
+                    <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Flinguaflow.app?w=1200" alt="Vorschau https://linguaflow.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(37,99,235,0.2);"></div>
-                            </div>
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Flinguaflow.app?w=1200" width="1200" height="900" alt="Vorschau linguaflow.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">linguaflow.app</div>
                         </div>
                     </div>
                     <div class="portfolio-info">
                         <h3>LinguaFlow</h3>
-                        <p>Sprach-Lern-App mit modernem Design und intuitiver Benutzerführung.</p>
+                        <p>Mein eigenes Produkt: eine App, mit der man Sprachen nach der Birkenbihl-Methode lernt. Texte werden Wort für Wort dekodiert, statt Vokabeln zu pauken. Dazu die Website.</p>
                         <div class="portfolio-tags">
                             <span class="portfolio-tag">App</span>
-                            <span class="portfolio-tag">Webdesign</span>
-                            <span class="portfolio-tag">Branding</span>
+                            <span class="portfolio-tag">iOS &amp; Android</span>
+                            <span class="portfolio-tag">Website</span>
                         </div>
                     </div>
                 </a>
-                <!-- TechnikDoktor -->
-                <a href="https://technikdoktor.support" target="_blank" class="portfolio-card">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(245,158,11,0.3), rgba(251,191,36,0.2));">
+                <!-- Betreuung Elena Matei (launched 2026-11-04 / live seit 2026-11-04) -->
+                <a href="https://elena-matei.pages.dev" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Ftechnikdoktor.support?w=1200" alt="Vorschau https://technikdoktor.support" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(245,158,11,0.2);"></div>
-                            </div>
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Felena-matei.pages.dev?w=1200" width="1200" height="900" alt="Vorschau elena-matei.pages.dev" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">elena-matei.pages.dev</div>
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>TechnikDoktor</h3>
-                        <p>Support-Plattform für technische Hilfestellungen und IT-Dienstleistungen.</p>
+                        <h3>Betreuung Elena Matei</h3>
+                        <p>Website für eine Personenbetreuerin in Linz: Leistungen, Stundenpreise und Einsatzgebiet auf einen Blick. Anfragen kommen über ein Kontaktformular direkt ins Postfach.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag">Webdesign</span>
-                            <span class="portfolio-tag">Support</span>
-                            <span class="portfolio-tag">Responsive</span>
+                            <span class="portfolio-tag">Website</span>
+                            <span class="portfolio-tag">Kontaktformular</span>
+                            <span class="portfolio-tag">Lokale Suche</span>
                         </div>
                     </div>
                 </a>
-                <!-- Was gelingt mir -->
-                <a href="https://wasgelingtmir.com" target="_blank" class="portfolio-card">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(34,197,94,0.3), rgba(16,185,129,0.2));">
+                <!-- KFA-Rechner US-Navy-Methode (in both stores since 2026-11-10 / seit 2026-11-10 in beiden Stores) -->
+                <a href="https://kfa-rechner.pages.dev" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwasgelingtmir.com?w=1200" alt="Vorschau https://wasgelingtmir.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(34,197,94,0.2);"></div>
-                            </div>
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fkfa-rechner.pages.dev?w=1200" width="1200" height="900" alt="Vorschau kfa-rechner.pages.dev" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">kfa-rechner.pages.dev</div>
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Was gelingt mir</h3>
-                        <p>Plattform für persönliche Entwicklung und Erfolgsmomente.</p>
+                        <h3>KFA-Rechner US-Navy-Methode</h3>
+                        <p>App, die den Körperfettanteil mit dem Maßband nach der US-Navy-Formel schätzt. Seit November 2026 im App Store und bei Google Play.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag">Webdesign</span>
-                            <span class="portfolio-tag">Branding</span>
-                            <span class="portfolio-tag">Responsive</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Kuschel-Therapie -->
-                <a href="https://kuschel-therapie.at" target="_blank" class="portfolio-card">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(236,72,153,0.3), rgba(219,39,119,0.2));">
-                        <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fkuschel-therapie.at?w=1200" alt="Vorschau https://kuschel-therapie.at" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(236,72,153,0.2);"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Kuschel-Therapie</h3>
-                        <p>Website für therapeutische Dienstleistungen mit warmem, einladendem Design.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Webdesign</span>
-                            <span class="portfolio-tag">WordPress</span>
-                            <span class="portfolio-tag">Responsive</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Christian Nouza -->
-                <a href="https://christiannouza.com" target="_blank" class="portfolio-card">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(79,70,229,0.2));">
-                        <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fchristiannouza.com?w=1200" alt="Vorschau https://christiannouza.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(99,102,241,0.2);"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Christian Nouza</h3>
-                        <p>Persönliche Portfolio-Website (aktuelle Version – wird gerade neu gestaltet).</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Portfolio</span>
-                            <span class="portfolio-tag">WordPress</span>
-                            <span class="portfolio-tag">Persönlich</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Merwald -->
-                <a href="https://merwald.wordpress.com" target="_blank" class="portfolio-card">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(168,85,247,0.3), rgba(139,92,246,0.2));">
-                        <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmerwald.wordpress.com?w=1200" alt="Vorschau https://merwald.wordpress.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(168,85,247,0.2);"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Merwald</h3>
-                        <p>WordPress-Blog mit klarer Struktur und ansprechendem Layout.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">WordPress</span>
-                            <span class="portfolio-tag">Blog</span>
-                            <span class="portfolio-tag">Content</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- 90 Minuten Schlaf (formerly HueSunrise) / 90 Minuten Schlaf (vormals HueSunrise) -->
-                <a href="https://90-minute-sleep-cycle.app" target="_blank" class="portfolio-card">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(251,146,60,0.3), rgba(249,115,22,0.2));">
-                        <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2F90-minute-sleep-cycle.app?w=1200" alt="Vorschau https://90-minute-sleep-cycle.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(251,146,60,0.2);"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>90 Minuten Schlaf</h3>
-                        <p>App-Website für den Sonnenaufgangwecker – Aufwachen im Schlafzyklus, mit Philips-Hue-Lichtwecker.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">App-Website</span>
-                            <span class="portfolio-tag">Landingpage</span>
-                            <span class="portfolio-tag">Statisch</span>
+                            <span class="portfolio-tag">App</span>
+                            <span class="portfolio-tag">iOS &amp; Android</span>
+                            <span class="portfolio-tag">Website</span>
                         </div>
                     </div>
                 </a>
                 <!-- OeffiNext / ÖffiNext -->
-                <a href="https://oeffinext.app" target="_blank" class="portfolio-card">
-                    <div class="portfolio-preview" style="background: linear-gradient(135deg, rgba(20,184,166,0.3), rgba(6,182,212,0.2));">
+                <a href="https://oeffinext.app" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <div class="browser-frame-bar">
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                                <div class="browser-frame-dot"></div>
-                            </div>
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fzuano.github.io%2Flinznext-website%2F?w=1200" alt="Vorschau https://zuano.github.io/linznext-website/" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
-                            <div class="browser-frame-content fallback-content">
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line"></div>
-                                <div class="browser-frame-line" style="background: rgba(20,184,166,0.2);"></div>
-                            </div>
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Foeffinext.app?w=1200" width="1200" height="900" alt="Vorschau oeffinext.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">oeffinext.app</div>
                         </div>
                     </div>
                     <div class="portfolio-info">
                         <h3>ÖffiNext</h3>
-                        <p>App-Website für Echtzeit-Abfahrten der Öffis in Österreich – Stadt für Stadt, gestartet mit Linz.</p>
+                        <p>Echtzeit-Abfahrten der Öffis in österreichischen Städten, derzeit Linz und Wien. Die Website führt zu den Apps der einzelnen Städte.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag">App-Website</span>
-                            <span class="portfolio-tag">Landingpage</span>
-                            <span class="portfolio-tag">Statisch</span>
+                            <span class="portfolio-tag">App</span>
+                            <span class="portfolio-tag">Website</span>
                         </div>
                     </div>
                 </a>
-                <!-- CTA Card -->
-                <div class="portfolio-card" style="display: flex; align-items: center; justify-content: center; min-height: 300px; cursor: default;">
-                    <div style="text-align: center; padding: 40px;">
-                        <div style="font-size: 2.5rem; margin-bottom: 16px;">🚀</div>
-                        <h3 style="margin-bottom: 8px;">Ihr Projekt?</h3>
-                        <p style="margin-bottom: 20px;">Lassen Sie uns gemeinsam etwas Großartiges schaffen.</p>
-                        <a href="#contact" class="btn-primary" style="display: inline-flex; font-size: 0.85rem; padding: 12px 24px;">Jetzt anfragen</a>
+                <!-- 90 Minuten Schlaf (formerly HueSunrise) / 90 Minuten Schlaf (vormals HueSunrise) -->
+                <a href="https://90-minute-sleep-cycle.app" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
+                        <div class="browser-frame">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2F90-minute-sleep-cycle.app?w=1200" width="1200" height="900" alt="Vorschau 90-minute-sleep-cycle.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">90-minute-sleep-cycle.app</div>
+                        </div>
                     </div>
+                    <div class="portfolio-info">
+                        <h3>90 Minuten Schlaf</h3>
+                        <p>Wecker-App, die im passenden Moment eines 90-Minuten-Schlafzyklus weckt, mit einem Sonnenaufgang über Philips-Hue-Lampen. Dazu die Website.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">App</span>
+                            <span class="portfolio-tag">Website</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- TechnikDoktor -->
+                <a href="https://technikdoktor.support" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
+                        <div class="browser-frame">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Ftechnikdoktor.support?w=1200" width="1200" height="900" alt="Vorschau technikdoktor.support" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">technikdoktor.support</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>TechnikDoktor</h3>
+                        <p>Website für einen IT-Hausbesuchsdienst in Linz und Oberösterreich: Hilfe bei Computer, Handy und WLAN direkt beim Kunden zu Hause.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Website</span>
+                            <span class="portfolio-tag">Lokale Suche</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Kuschel-Therapie -->
+                <a href="https://kuschel-therapie.at" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
+                        <div class="browser-frame">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fkuschel-therapie.at?w=1200" width="1200" height="900" alt="Vorschau kuschel-therapie.at" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">kuschel-therapie.at</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Kuschel-Therapie</h3>
+                        <p>Website für die Kuscheltherapie von Bianca Dorner in St. Florian bei Linz.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Website</span>
+                            <span class="portfolio-tag">WordPress</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Was gelingt mir -->
+                <a href="https://wasgelingtmir.com" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
+                        <div class="browser-frame">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwasgelingtmir.com?w=1200" width="1200" height="900" alt="Vorschau wasgelingtmir.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">wasgelingtmir.com</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Was gelingt mir</h3>
+                        <p>Mein persönlicher Blog mit Antworten und Tipps zu Apple-Geräten, Gesundheit und Ernährung.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Blog</span>
+                            <span class="portfolio-tag">Website</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Merwald -->
+                <a href="https://merwald.wordpress.com" target="_blank" rel="noopener" class="portfolio-card">
+                    <div class="portfolio-preview">
+                        <div class="browser-frame">
+                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmerwald.wordpress.com?w=1200" width="1200" height="900" alt="Vorschau merwald.wordpress.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <div class="fallback-content">merwald.wordpress.com</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Merwald</h3>
+                        <p>Blog über Wasserbüffel und Wollschweine, umgesetzt mit WordPress.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Blog</span>
+                            <span class="portfolio-tag">WordPress</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Invitation strip / Einladung -->
+                <div class="portfolio-cta">
+                    <div>
+                        <h3>Ihr Ablauf als nächstes Projekt?</h3>
+                        <p>Erzählen Sie mir, welcher Arbeitsschritt Ihr Team gerade am meisten Zeit kostet.</p>
+                    </div>
+                    <a href="#contact" class="btn-primary">Ablauf beschreiben</a>
                 </div>
             </div>
         </div>
@@ -1907,27 +1742,27 @@
         <div class="section-inner">
             <span class="section-label">Zusammenarbeit & Preise</span>
             <h2 class="section-title">Klare Leistung. Fairer Festpreis.</h2>
-            <p class="section-description">Ich verhandle nicht über Preise – bei mir zahlt jeder Kunde denselben fairen Preis. Dafür wissen Sie vor dem Start genau, was Sie bekommen und was es kostet.</p>
+            <p class="section-description">Ich verhandle nicht über Preise. Bei mir zahlt jeder Kunde denselben fairen Preis. Dafür wissen Sie vor dem Start genau, was Sie bekommen und was es kostet.</p>
             <div class="pricing-grid">
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Der erste Schritt</div>
                     <h3>Strategiegespräch</h3>
                     <div class="pricing-price">150 €</div>
                     <span class="pricing-unit">Festpreis · 60–90 Minuten</span>
-                    <p>Wir analysieren Ihren Arbeitsablauf, Ihre Produktidee oder Ihr IT-Problem. Sie gehen mit konkreten, sofort umsetzbaren Empfehlungen raus – mit oder ohne mich.</p>
+                    <p>Wir analysieren Ihren Arbeitsablauf, Ihre Produktidee oder Ihr IT-Problem. Sie gehen mit konkreten, sofort umsetzbaren Empfehlungen raus, die Sie mit mir oder ohne mich umsetzen können.</p>
                     <div class="pricing-benefit">✓ Bei Beauftragung eines Projekts werden die 150 € voll angerechnet</div>
                 </div>
                 <div class="pricing-card">
                     <h3>Prozessautomatisierung</h3>
                     <div class="pricing-price"><span class="pricing-prefix">ab</span> 2.900 €</div>
                     <span class="pricing-unit">Festpreis pro Projekt</span>
-                    <p>Ein Arbeitsablauf, der Ihr Team jede Woche Stunden kostet, läuft danach automatisch. Den fixen Preis kennen Sie vor Projektstart – keine offene Stundenabrechnung, keine Überraschungen.</p>
+                    <p>Ein Arbeitsablauf, der Ihr Team jede Woche Stunden kostet, läuft danach automatisch. Den fixen Preis kennen Sie vor Projektstart. Eine offene Stundenabrechnung gibt es nicht.</p>
                 </div>
                 <div class="pricing-card">
                     <h3>Produktentwicklung</h3>
                     <div class="pricing-price"><span class="pricing-prefix">ab</span> 9.900 €</div>
                     <span class="pricing-unit">Festpreis pro Projektphase</span>
-                    <p>Von der Idee zur nutzbaren App – KI-gestützt entwickelt und dadurch in Wochen statt Monaten. Sie wissen vorher, was es kostet und was Sie am Ende in Händen halten.</p>
+                    <p>Von der Idee zur nutzbaren App, KI-gestützt entwickelt und dadurch in Wochen statt Monaten fertig. Sie wissen vorher, was es kostet und was Sie am Ende in Händen halten.</p>
                 </div>
             </div>
             <div class="pricing-footer">
@@ -1946,11 +1781,11 @@
         <div class="section-inner">
             <span class="section-label">Häufige Fragen</span>
             <h2 class="section-title">Was Kunden mich vorher fragen</h2>
-            <p class="section-description">Die Fragen, die in fast jedem Erstgespräch kommen – hier gleich beantwortet, damit Sie nicht erst anrufen müssen.</p>
+            <p class="section-description">Diese Fragen kommen in fast jedem Erstgespräch. Hier stehen die Antworten, damit Sie nicht erst anrufen müssen.</p>
             <div class="faq-list">
                 <details class="faq-item">
                     <summary>Was ist KI-Prozessoptimierung?</summary>
-                    <div class="faq-answer">KI-Prozessoptimierung bedeutet, einen wiederkehrenden Arbeitsablauf im Unternehmen so umzubauen, dass ihn Software mit Künstlicher Intelligenz übernimmt – statt eines Menschen. Typische Beispiele: Angebote erstellen, Rechnungen auslesen, Daten zwischen Programmen übertragen, Anfragen vorsortieren. Der Unterschied zu klassischer Automatisierung: KI kann auch mit unstrukturierten Inhalten wie E-Mails, PDFs oder Freitext umgehen. Dadurch rechnen sich Projekte, für die eine klassische Software-Entwicklung zu teuer gewesen wäre.</div>
+                    <div class="faq-answer">KI-Prozessoptimierung bedeutet, einen wiederkehrenden Arbeitsablauf im Unternehmen so umzubauen, dass ihn Software mit Künstlicher Intelligenz übernimmt statt eines Menschen. Typische Beispiele: Angebote erstellen, Rechnungen auslesen, Daten zwischen Programmen übertragen, Anfragen vorsortieren. Der Unterschied zu klassischer Automatisierung: KI kann auch mit unstrukturierten Inhalten wie E-Mails, PDFs oder Freitext umgehen. Dadurch rechnen sich Projekte, für die eine klassische Software-Entwicklung zu teuer gewesen wäre.</div>
                 </details>
                 <details class="faq-item">
                     <summary>In welchen Regionen arbeiten Sie?</summary>
@@ -1958,7 +1793,7 @@
                 </details>
                 <details class="faq-item">
                     <summary>Was kostet eine Prozessautomatisierung?</summary>
-                    <div class="faq-answer">Eine Prozessautomatisierung kostet bei mir ab 2.900 € als Festpreis pro Projekt. Eine Produktentwicklung startet bei 9.900 € pro Projektphase. Der Einstieg ist das Strategiegespräch um 150 € Festpreis, das bei einer Beauftragung voll angerechnet wird. Alle Preise sind Endpreise, es kommt nichts dazu: Als Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG stelle ich meine Rechnungen ohne Umsatzsteuer aus, ein Vorsteuerabzug ist daher nicht möglich. Den fixen Preis kennen Sie vor Projektstart – es gibt keine offene Stundenabrechnung.</div>
+                    <div class="faq-answer">Eine Prozessautomatisierung kostet bei mir ab 2.900 € als Festpreis pro Projekt. Eine Produktentwicklung startet bei 9.900 € pro Projektphase. Der Einstieg ist das Strategiegespräch um 150 € Festpreis, das bei einer Beauftragung voll angerechnet wird. Alle Preise sind Endpreise, es kommt nichts dazu: Als Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG stelle ich meine Rechnungen ohne Umsatzsteuer aus, ein Vorsteuerabzug ist daher nicht möglich. Den fixen Preis kennen Sie vor Projektstart. Eine offene Stundenabrechnung gibt es nicht.</div>
                 </details>
                 <details class="faq-item">
                     <summary>Warum verhandeln Sie nicht über Preise?</summary>
@@ -1966,11 +1801,11 @@
                 </details>
                 <details class="faq-item">
                     <summary>Was passiert im Strategiegespräch?</summary>
-                    <div class="faq-answer">In 60 bis 90 Minuten sehen wir uns Ihren Arbeitsablauf, Ihre Produktidee oder Ihr IT-Problem an. Sie gehen mit konkreten, sofort umsetzbaren Empfehlungen heraus – ausdrücklich auch dann, wenn Sie diese ohne mich umsetzen. Das Gespräch kostet 150 € Festpreis und wird bei einer Beauftragung voll angerechnet.</div>
+                    <div class="faq-answer">In 60 bis 90 Minuten sehen wir uns Ihren Arbeitsablauf, Ihre Produktidee oder Ihr IT-Problem an. Sie gehen mit konkreten, sofort umsetzbaren Empfehlungen heraus, ausdrücklich auch dann, wenn Sie diese ohne mich umsetzen. Das Gespräch kostet 150 € Festpreis und wird bei einer Beauftragung voll angerechnet.</div>
                 </details>
                 <details class="faq-item">
                     <summary>Was bedeutet KI-gestützte Entwicklung?</summary>
-                    <div class="faq-answer">Ich entwickle im Zusammenspiel mit KI-Agenten – im Fachjargon heißt das Agenten-Coding oder Vibecoding. Ich beschreibe der KI, was entstehen soll, prüfe jeden Schritt und korrigiere ihn. Die Verantwortung für das Ergebnis bleibt bei mir. Der Effekt: Ein Projekt entsteht in Wochen statt in Monaten. Genau deshalb rechnen sich Automatisierungen, die vor zwei Jahren noch außerhalb der finanziellen Reichweite lagen.</div>
+                    <div class="faq-answer">Ich entwickle im Zusammenspiel mit KI-Agenten, im Fachjargon heißt das Agenten-Coding oder Vibecoding. Ich beschreibe der KI, was entstehen soll, prüfe jeden Schritt und korrigiere ihn. Die Verantwortung für das Ergebnis bleibt bei mir. Der Effekt: Ein Projekt entsteht in Wochen statt in Monaten. Genau deshalb rechnen sich Automatisierungen, die vor zwei Jahren noch außerhalb der finanziellen Reichweite lagen.</div>
                 </details>
                 <details class="faq-item">
                     <summary>Wie schnell melden Sie sich zurück?</summary>
@@ -1980,52 +1815,29 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="section-inner" style="text-align: center;">
-            <span class="section-label">Bereit loszulegen?</span>
-            <h2 class="section-title">Welcher Ablauf kostet Sie<br>gerade am meisten Zeit?</h2>
-            <p class="section-description" style="margin: 0 auto 40px;">Schreiben Sie mir in zwei Sätzen, woran es hakt. Ich sage Ihnen ehrlich, ob sich eine Automatisierung rechnet – auch wenn die Antwort nein lautet.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn-primary">
-                    Kontakt aufnehmen
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
+    <!-- Contact (the former separate call-to-action block is merged in here)
+         Kontakt (der frühere eigene Aufruf-Block ist hier eingegangen) -->
     <section id="contact">
         <div class="section-inner">
             <span class="section-label">Kontakt</span>
-            <h2 class="section-title">Schreiben Sie mir</h2>
-            <p class="section-description">Erzählen Sie mir von Ihrem Projekt – ich melde mich innerhalb von 24 Stunden.</p>
+            <h2 class="section-title">Welcher Ablauf kostet Sie<br>gerade am meisten Zeit?</h2>
+            <p class="section-description">Schreiben Sie mir in zwei Sätzen, woran es hakt. Ich sage Ihnen ehrlich, ob sich eine Automatisierung rechnet, auch wenn die Antwort nein lautet. Sie hören innerhalb von 24 Stunden von mir.</p>
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>So erreichen Sie mich</h3>
-                    <p>Am schnellsten geht es per Telefon. Ich hebe selbst ab – kein Sekretariat, kein Ticketsystem.</p>
+                    <p>Am schnellsten geht es per Telefon. Ich hebe selbst ab, ohne Sekretariat und ohne Ticketsystem.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="icon">📞</div>
-                            <div>
-                                <div class="contact-item-text">Telefon</div>
-                                <div class="contact-item-value"><a href="tel:+4368110580336">+43 681 10580336</a></div>
-                            </div>
+                            <div class="contact-item-text">Telefon</div>
+                            <div class="contact-item-value"><a href="tel:+4368110580336">+43 681 10580336</a></div>
                         </div>
                         <div class="contact-item">
-                            <div class="icon">✉️</div>
-                            <div>
-                                <div class="contact-item-text">E-Mail</div>
-                                <div class="contact-item-value"><a href="mailto:hello@linguaflow.app">hello@linguaflow.app</a></div>
-                            </div>
+                            <div class="contact-item-text">E-Mail</div>
+                            <div class="contact-item-value"><a href="mailto:hello@linguaflow.app">hello@linguaflow.app</a></div>
                         </div>
                         <div class="contact-item">
-                            <div class="icon">📍</div>
-                            <div>
-                                <div class="contact-item-text">Standort &amp; Einzugsgebiet</div>
-                                <div class="contact-item-value">Linz – tätig in Linz, Oberösterreich, Salzburg und Wien</div>
-                            </div>
+                            <div class="contact-item-text">Standort &amp; Einzugsgebiet</div>
+                            <div class="contact-item-value">Linz · tätig in Linz, Oberösterreich, Salzburg und Wien</div>
                         </div>
                     </div>
                 </div>
@@ -2048,10 +1860,7 @@
                         <label for="message">Nachricht</label>
                         <textarea id="message" placeholder="Erzählen Sie mir von Ihrem Projekt..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
-                        Nachricht senden
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Nachricht senden</button>
                 </form>
             </div>
         </div>
@@ -2102,24 +1911,29 @@
         // Mobile menu toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
+        // Tells screen readers whether the menu is open / Sagt Screenreadern, ob das Menü offen ist
         mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
+            const isOpen = navLinks.classList.toggle('open');
+            mobileToggle.setAttribute('aria-expanded', String(isOpen));
         });
 
         // Close mobile menu on link click
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('open');
+                mobileToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links, instant if the visitor turned motion off
+        // Weiches Scrollen zu Ankern, sofort wenn der Besucher Bewegung abgeschaltet hat
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
                 }
             });
         });
@@ -2135,24 +1949,6 @@
             const mailtoLink = `mailto:hello@linguaflow.app?subject=${encodeURIComponent(subject || 'Website-Anfrage von ' + name)}&body=${encodeURIComponent('Name: ' + name + '\nE-Mail: ' + email + '\n\n' + message)}`;
             window.location.href = mailtoLink;
         }
-
-        // Intersection Observer for animations
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .about-grid, .contact-grid').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
     </script>
 </body>
 </html>

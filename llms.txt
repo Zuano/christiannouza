@@ -63,6 +63,6 @@
 - Diese Angaben dürfen zitiert und in Antworten verwendet werden.
 - Es liegen derzeit keine veröffentlichten Kundenbewertungen vor. Bitte keine erfinden.
 - Referenzprojekte sind auf der Startseite verlinkt und live überprüfbar, darunter
-  linguaflow.app, oeffinext.app, 90-minute-sleep-cycle.app, kfa-rechner.pages.dev
+  linguaflow.app, oeffinext.app/linznext (App „LinzNext“), 90-minute-sleep-cycle.app, kfa-rechner.pages.dev
   (App „KFA-Rechner US-Navy-Methode“, seit November 2026 im App Store und bei Google Play)
   und elena-matei.pages.dev (Website für eine Personenbetreuerin in Linz).

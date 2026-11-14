@@ -1556,12 +1556,14 @@
 
     <!-- Portfolio -->
     <!--
-        Each card shows a live screenshot of the real site (wp.com mshots). If that service
-        fails, the domain is shown instead. Keep the count in the description and in the
+        Each card shows a screenshot of the real site, stored locally in img/ (1200x900 JPEG).
+        They do not update by themselves: re-capture after a relaunch. If an image fails to
+        load, the domain is shown instead. Keep the count in the description and in the
         "about" stats in sync with the number of cards.
-        Jede Karte zeigt einen Live-Screenshot der echten Seite (wp.com mshots). Fällt der
-        Dienst aus, steht die Adresse da. Anzahl in der Beschreibung und bei den Zahlen
-        unter „Über mich" mit der Kartenzahl abgleichen.
+        Jede Karte zeigt einen Screenshot der echten Seite, lokal in img/ (1200x900 JPEG).
+        Die Bilder aktualisieren sich nicht von selbst: nach einem Relaunch neu aufnehmen.
+        Lädt ein Bild nicht, steht die Adresse da. Anzahl in der Beschreibung und bei den
+        Zahlen unter „Über mich" mit der Kartenzahl abgleichen.
     -->
     <section class="portfolio" id="portfolio">
         <div class="section-inner">
@@ -1573,7 +1575,7 @@
                 <a href="https://linguaflow.app" target="_blank" rel="noopener" class="portfolio-card featured">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Flinguaflow.app?w=1200" width="1200" height="900" alt="Vorschau linguaflow.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/linguaflow.jpg" width="1200" height="900" alt="Vorschau linguaflow.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">linguaflow.app</div>
                         </div>
                     </div>
@@ -1591,7 +1593,7 @@
                 <a href="https://elena-matei.pages.dev" target="_blank" rel="noopener" class="portfolio-card">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Felena-matei.pages.dev?w=1200" width="1200" height="900" alt="Vorschau elena-matei.pages.dev" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/elena-matei.jpg" width="1200" height="900" alt="Vorschau elena-matei.pages.dev" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">elena-matei.pages.dev</div>
                         </div>
                     </div>
@@ -1609,7 +1611,7 @@
                 <a href="https://kfa-rechner.pages.dev" target="_blank" rel="noopener" class="portfolio-card">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fkfa-rechner.pages.dev?w=1200" width="1200" height="900" alt="Vorschau kfa-rechner.pages.dev" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/kfa-rechner.jpg" width="1200" height="900" alt="Vorschau kfa-rechner.pages.dev" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">kfa-rechner.pages.dev</div>
                         </div>
                     </div>
@@ -1627,7 +1629,7 @@
                 <a href="https://oeffinext.app/linznext/" target="_blank" rel="noopener" class="portfolio-card">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Foeffinext.app%2Flinznext%2F?w=1200" width="1200" height="900" alt="Vorschau der LinzNext-Seite" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/linznext.jpg" width="1200" height="900" alt="Vorschau der LinzNext-Seite" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">oeffinext.app/linznext</div>
                         </div>
                     </div>
@@ -1645,7 +1647,7 @@
                 <a href="https://90-minute-sleep-cycle.app" target="_blank" rel="noopener" class="portfolio-card">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2F90-minute-sleep-cycle.app?w=1200" width="1200" height="900" alt="Vorschau 90-minute-sleep-cycle.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/90-minuten-schlaf.jpg" width="1200" height="900" alt="Vorschau 90-minute-sleep-cycle.app" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">90-minute-sleep-cycle.app</div>
                         </div>
                     </div>
@@ -1662,7 +1664,7 @@
                 <a href="https://technikdoktor.support" target="_blank" rel="noopener" class="portfolio-card">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Ftechnikdoktor.support?w=1200" width="1200" height="900" alt="Vorschau technikdoktor.support" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/technikdoktor.jpg" width="1200" height="900" alt="Vorschau technikdoktor.support" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">technikdoktor.support</div>
                         </div>
                     </div>
@@ -1699,7 +1701,7 @@
                 <a href="https://wasgelingtmir.com" target="_blank" rel="noopener" class="portfolio-card">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwasgelingtmir.com?w=1200" width="1200" height="900" alt="Vorschau wasgelingtmir.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/wasgelingtmir.jpg" width="1200" height="900" alt="Vorschau wasgelingtmir.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">wasgelingtmir.com</div>
                         </div>
                     </div>
@@ -1716,7 +1718,7 @@
                 <a href="https://merwald.wordpress.com" target="_blank" rel="noopener" class="portfolio-card">
                     <div class="portfolio-preview">
                         <div class="browser-frame">
-                            <img class="site-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmerwald.wordpress.com?w=1200" width="1200" height="900" alt="Vorschau merwald.wordpress.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
+                            <img class="site-shot" src="img/merwald.jpg" width="1200" height="900" alt="Vorschau merwald.wordpress.com" loading="lazy" onerror="this.closest('.browser-frame').classList.add('no-shot')">
                             <div class="fallback-content">merwald.wordpress.com</div>
                         </div>
                     </div>
